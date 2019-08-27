@@ -1,5 +1,6 @@
 package com.iti.foxmovies;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
     Button button;
     TextView textView;
+    Button next;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +32,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 try {
-               new GetMethodDemo().execute("https://api.themoviedb.org/3/trending/all/day?api_key=1a45f741aada87874aacfbeb73119bae")
-                           ;
-
+               new GetMethodDemo().execute("https://api.themoviedb.org/3/trending/all/day?api_key=1a45f741aada87874aacfbeb73119bae");
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
+        next = findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v) {
+            // Code here executes on main thread after user presses button
+            Intent myIntent = new Intent(getBaseContext(), OkHttp.class);
+            startActivity(myIntent);
 
+        }
+    });
 
     }
 
