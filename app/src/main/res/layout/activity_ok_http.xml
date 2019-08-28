@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".OkHttp">
 
     <TextView
         android:layout_width="match_parent"
@@ -22,18 +22,18 @@
         android:text="Get Jason"
         android:id="@+id/button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/next"
-        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/previous"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="15dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:id="@+id/next"
+        android:text="Previous"
+        android:id="@+id/previous"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/button"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button"
         android:layout_margin="15dp"/>
 
 </android.support.constraint.ConstraintLayout>
